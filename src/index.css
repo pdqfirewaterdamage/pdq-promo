@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-navy-950 text-slate-100 antialiased font-sans;
+}
+
+/* ----- shared utility classes ----- */
+@layer components {
+  .container-pdq {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-accent-400;
+  }
+  .card-surface {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur;
+  }
+}
+
+/* ----- gradient mesh background ----- */
+.hero-mesh {
+  background:
+    radial-gradient(60% 50% at 15% 10%, rgba(37, 83, 163, 0.55) 0%, transparent 60%),
+    radial-gradient(50% 50% at 90% 0%, rgba(255, 92, 10, 0.28) 0%, transparent 55%),
+    radial-gradient(60% 60% at 80% 90%, rgba(27, 65, 133, 0.45) 0%, transparent 60%);
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* ============================================================
+   PITCH DECK — on-screen styles
+   ============================================================ */
+.deck-slide {
+  aspect-ratio: 16 / 9;
+}
+
+/* ============================================================
+   PRINT — "Download PDF" scopes printing to #deck-print only
+   ============================================================ */
+@media print {
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+
+  body.printing-deck * {
+    visibility: hidden !important;
+  }
+  body.printing-deck #deck-print,
+  body.printing-deck #deck-print * {
+    visibility: visible !important;
+  }
+  body.printing-deck #deck-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  /* In print mode every slide is shown, one per page. */
+  body.printing-deck #deck-print .print-slide {
+    display: flex !important;
+    page-break-after: always;
+    break-after: page;
+    width: 1280px;
+    height: 720px;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  body.printing-deck #deck-print .print-slide:last-child {
+    page-break-after: auto;
+  }
+  body.printing-deck .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,7 @@
+# Cloudflare Pages configuration for the PDQ CRM promo site.
+# This is a static SPA: Pages serves the built assets in ./dist.
+#
+# Deploy via the dashboard (recommended) or `wrangler pages deploy dist`.
+name = "pdq-promo"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
