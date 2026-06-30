@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import PhonePrototype from './PhonePrototype';
 import PitchDeck from './PitchDeck';
+import CrmDemo from './crm/CrmDemo';
 import { FEATURES, AI_FEATURES } from './data';
 
 function Wordmark() {
@@ -10,7 +12,7 @@ function Wordmark() {
   );
 }
 
-function Nav() {
+function Nav({ onOpenCrm }: { onOpenCrm: () => void }) {
   return (
     <header className="no-print sticky top-0 z-40 border-b border-white/10 bg-navy-950/80 backdrop-blur">
       <div className="container-pdq flex h-16 items-center justify-between">
@@ -23,21 +25,22 @@ function Nav() {
         <nav className="hidden items-center gap-7 text-sm font-medium text-white/70 md:flex">
           <a href="#features" className="hover:text-white">Platform</a>
           <a href="#ai" className="hover:text-white">AI</a>
+          <button onClick={onOpenCrm} className="font-medium text-white/70 hover:text-white">Live CRM</button>
           <a href="#prototype" className="hover:text-white">Mobile app</a>
           <a href="#deck" className="hover:text-white">Pitch deck</a>
         </nav>
-        <a
-          href="#prototype"
+        <button
+          onClick={onOpenCrm}
           className="rounded-lg bg-accent-500 px-4 py-2 text-sm font-bold text-white shadow-glow transition hover:bg-accent-600"
         >
-          See the demo
-        </a>
+          Open the CRM
+        </button>
       </div>
     </header>
   );
 }
 
-function Hero() {
+function Hero({ onOpenCrm }: { onOpenCrm: () => void }) {
   return (
     <section id="top" className="hero-mesh relative overflow-hidden">
       <div className="grid-overlay pointer-events-none absolute inset-0" />
@@ -59,12 +62,12 @@ function Hero() {
             field, live dashboards for the office, and AI that does the heavy lifting.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#prototype"
+            <button
+              onClick={onOpenCrm}
               className="rounded-xl bg-accent-500 px-6 py-3 text-base font-bold text-white shadow-glow transition hover:bg-accent-600"
             >
-              Try the mobile demo
-            </a>
+              Open the live CRM demo
+            </button>
             <a
               href="#deck"
               className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10"
@@ -244,7 +247,52 @@ function Integrations() {
   );
 }
 
-function CTA() {
+function CrmBanner({ onOpenCrm }: { onOpenCrm: () => void }) {
+  return (
+    <section id="crm" className="container-pdq scroll-mt-20 py-12">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#082A4E] to-[#04152A] px-6 py-12 sm:px-12">
+        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
+        <div className="relative grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
+          <div>
+            <p className="eyebrow text-emerald-300">The actual app — in your browser</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
+              Click through the real PDQ CRM
+            </h2>
+            <p className="mt-4 max-w-xl text-white/70">
+              The full office web app — all eight dashboards and every tab — plus the mobile
+              field app, running on sample data. Open every menu, search the job board, drill into
+              a job, and flip between Office and Field. No login required.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <button onClick={onOpenCrm} className="rounded-xl bg-emerald-500 px-6 py-3 font-bold text-white shadow-glow transition hover:bg-emerald-600">
+                Open the live CRM →
+              </button>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/50">
+              <span>Operations · Rebuild · Warehouse · Collections</span>
+              <span>Insurance · Sales · Marketing · Company</span>
+            </div>
+          </div>
+          <ul className="grid grid-cols-2 gap-3">
+            {[
+              ['8', 'Live dashboards'],
+              ['40+', 'Menu tabs'],
+              ['Web', '+ Mobile app'],
+              ['0', 'Network calls'],
+            ].map(([v, l]) => (
+              <li key={l} className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-5 text-center">
+                <div className="text-2xl font-extrabold text-white">{v}</div>
+                <div className="mt-1 text-xs text-white/55">{l}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA({ onOpenCrm }: { onOpenCrm: () => void }) {
   return (
     <section className="container-pdq py-16">
       <div className="relative overflow-hidden rounded-3xl border border-accent-500/30 bg-gradient-to-br from-navy-800 to-navy-950 px-6 py-14 text-center sm:px-12">
@@ -253,12 +301,12 @@ function CTA() {
           Run the whole business from one place
         </h2>
         <p className="relative mx-auto mt-4 max-w-xl text-white/70">
-          Field to billing, with AI built in. Take the mobile demo for a spin, then walk through the pitch.
+          Field to billing, with AI built in. Open the live CRM demo, then walk through the pitch.
         </p>
         <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-          <a href="#prototype" className="rounded-xl bg-accent-500 px-6 py-3 font-bold text-white shadow-glow hover:bg-accent-600">
-            Try the demo
-          </a>
+          <button onClick={onOpenCrm} className="rounded-xl bg-accent-500 px-6 py-3 font-bold text-white shadow-glow hover:bg-accent-600">
+            Open the live CRM
+          </button>
           <a href="#deck" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white hover:bg-white/10">
             Open the pitch deck
           </a>
@@ -281,18 +329,33 @@ function Footer() {
 }
 
 export default function App() {
+  const [showCrm, setShowCrm] = useState(false);
+  const openCrm = () => {
+    setShowCrm(true);
+    window.scrollTo(0, 0);
+  };
+
+  if (showCrm) {
+    return (
+      <div className="fixed inset-0 z-50 bg-white">
+        <CrmDemo onExit={() => setShowCrm(false)} />
+      </div>
+    );
+  }
+
   return (
     <>
-      <Nav />
+      <Nav onOpenCrm={openCrm} />
       <main>
-        <Hero />
+        <Hero onOpenCrm={openCrm} />
         <Stats />
         <Features />
         <AISection />
+        <CrmBanner onOpenCrm={openCrm} />
         <Prototype />
         <PitchDeck />
         <Integrations />
-        <CTA />
+        <CTA onOpenCrm={openCrm} />
       </main>
       <Footer />
     </>
