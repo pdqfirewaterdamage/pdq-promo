@@ -257,7 +257,7 @@ export interface Slide {
 export const SLIDES: Slide[] = [
   {
     kind: 'title',
-    eyebrow: 'PDQ Restoration',
+    eyebrow: 'Tailr',
     title: 'The operating system for the restoration business',
     subtitle: 'Jobs, customers, claims, and compliance in one place — with AI built in.',
     footer: 'Investor & operations overview',
@@ -348,11 +348,11 @@ export const SLIDES: Slide[] = [
     kind: 'statement',
     eyebrow: 'Why now',
     title: 'The restoration back office is finally ready to be automated',
-    subtitle: 'The data, the integrations, and AI that can read a denial letter or a radio dispatch all exist today. PDQ CRM ties them into one workflow built by people who run the trucks.',
+    subtitle: 'The data, the integrations, and AI that can read a denial letter or a radio dispatch all exist today. Tailr CRM ties them into one workflow built by people who run the trucks.',
   },
   {
     kind: 'title',
-    eyebrow: 'PDQ Restoration CRM',
+    eyebrow: 'Tailr CRM',
     title: 'Run the whole business from one place',
     subtitle: 'Field to billing, with AI built in.',
     footer: 'Thank you',

@@ -10,11 +10,11 @@ const MUTED = 'B9C2D6';
 // Build and trigger download of a .pptx mirroring the on-screen deck.
 export async function downloadPptx(): Promise<void> {
   const pptx = new PptxGenJS();
-  pptx.defineLayout({ name: 'PDQ16x9', width: 13.333, height: 7.5 });
-  pptx.layout = 'PDQ16x9';
-  pptx.author = 'PDQ Restoration';
-  pptx.company = 'PDQ Restoration';
-  pptx.title = 'PDQ Restoration CRM';
+  pptx.defineLayout({ name: 'TLR16x9', width: 13.333, height: 7.5 });
+  pptx.layout = 'TLR16x9';
+  pptx.author = 'Tailr';
+  pptx.company = 'Tailr';
+  pptx.title = 'Tailr CRM';
 
   const W = 13.333;
 
@@ -37,7 +37,7 @@ export async function downloadPptx(): Promise<void> {
     // wordmark
     s.addText(
       [
-        { text: 'PDQ', options: { color: WHITE, bold: true } },
+        { text: 'Tailr', options: { color: WHITE, bold: true } },
         { text: ' · CRM', options: { color: ACCENT, bold: true } },
       ],
       { x: W - 2.6, y: 0.22, w: 2.3, h: 0.4, align: 'right', fontSize: 12, fontFace: 'Arial' },
@@ -108,5 +108,5 @@ export async function downloadPptx(): Promise<void> {
     }
   });
 
-  await pptx.writeFile({ fileName: 'PDQ-Restoration-CRM.pptx' });
+  await pptx.writeFile({ fileName: 'Tailr-CRM.pptx' });
 }

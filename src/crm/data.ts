@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// PDQ CRM — demo dataset.
+// Tailr CRM — demo dataset.
 //
 // Shaped to match the REAL pdq-crm Supabase schema (divisions, job_statuses,
 // jobs, equipment, collections, company scorecard, plumbers, alerts) so the

@@ -120,8 +120,8 @@ export function WebCrm() {
         <div className="crm-brand">
           <span className="crm-brand-mark" />
           <span>
-            <span className="crm-brand-text">PDQ</span>
-            <span className="crm-brand-sub" style={{ display: 'block' }}>Restoration CRM</span>
+            <span className="crm-brand-text">Tailr</span>
+            <span className="crm-brand-sub" style={{ display: 'block' }}>CRM</span>
           </span>
         </div>
         <nav className="crm-sidenav">
@@ -133,7 +133,7 @@ export function WebCrm() {
         </nav>
         <div className="crm-sidebar-foot">
           <button className="crm-btn crm-btn-primary" style={{ width: '100%' }}>+ Quick Create</button>
-          <span className="crm-user">demo@pdqrestoration.com</span>
+          <span className="crm-user">demo@gettailr.com</span>
         </div>
       </aside>
 
@@ -475,7 +475,7 @@ function WarehouseInventory({ system }: { system?: boolean }) {
           <tbody>
             {EQUIPMENT.flatMap((e, ei) => Array.from({ length: 3 }, (_, i) => (
               <tr key={`${e.kind}-${i}`}>
-                <td className="col-mono">PDQ-{e.kind.slice(0, 3).toUpperCase()}-{100 + ei * 10 + i}</td>
+                <td className="col-mono">TLR-{e.kind.slice(0, 3).toUpperCase()}-{100 + ei * 10 + i}</td>
                 <td>{e.label.replace(/s$/, '')}</td>
                 <td>{i === 0 ? <span className="crm-pill" style={{ background: '#2563eb' }}>On Job</span> : <span className="crm-pill" style={{ background: '#16a34a' }}>Available</span>}</td>
                 <td>{i === 0 ? 'Job site' : `Rack ${['L', 'R', 'S'][i % 3]}-${ei + 1}`}</td>
@@ -629,7 +629,7 @@ function RebuttalAssistant() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Card title="✨ AI Rebuttal Assistant">
-        <p className="crm-muted" style={{ marginBottom: 12 }}>Drafts insurance-denial rebuttals grounded in PDQ's denial library, citing IICRC standards and Xactimate line items.</p>
+        <p className="crm-muted" style={{ marginBottom: 12 }}>Drafts insurance-denial rebuttals grounded in your denial library, citing IICRC standards and Xactimate line items.</p>
         <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 10, padding: 16 }}>
           <div style={{ fontSize: 12, fontWeight: 700, color: '#475569', textTransform: 'uppercase', marginBottom: 8 }}>Denial: "Antimicrobial application not warranted"</div>
           <p style={{ fontSize: 13, lineHeight: 1.6 }}>

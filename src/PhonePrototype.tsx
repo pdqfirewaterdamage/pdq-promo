@@ -35,7 +35,7 @@ function StatusBar() {
     <div className="flex items-center justify-between px-5 pt-3 pb-1 text-[11px] font-semibold text-white/80">
       <span>9:41</span>
       <div className="flex items-center gap-1.5">
-        <span>PDQ Field</span>
+        <span>Tailr Field</span>
       </div>
       <span>▮▮▮ 5G</span>
     </div>
