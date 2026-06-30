@@ -74,8 +74,8 @@ export function MobileCrm() {
             <div className="crm-drawer">
               <div className="crm-drawer-head">
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-                  <span style={{ fontSize: 24, fontWeight: 800, color: NAVY, letterSpacing: 0.5 }}>PDQ</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: '#6b7280' }}>Restoration</span>
+                  <span style={{ fontSize: 24, fontWeight: 800, color: NAVY, letterSpacing: 0.5 }}>Tailr</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#6b7280' }}>CRM</span>
                 </div>
                 <div className="crm-mode-flip">
                   {(['office', 'field'] as Mode[]).map((m) => (
@@ -388,7 +388,7 @@ function MAccount() {
     <div className="crm-mcard" style={{ textAlign: 'center', padding: 20 }}>
       <div style={{ width: 64, height: 64, borderRadius: 32, background: NAVY, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, fontWeight: 800, margin: '0 auto 10px' }}>CR</div>
       <div style={{ fontWeight: 700, fontSize: 18 }}>Carlos Reyes</div>
-      <div style={{ color: '#6b7280', fontSize: 13 }}>Field Supervisor · PDQ Restoration</div>
+      <div style={{ color: '#6b7280', fontSize: 13 }}>Field Supervisor · Tailr</div>
     </div>
     {['Notifications', 'Office / Field default', 'Sync status', 'Help & Support'].map((r) => (
       <div key={r} className="crm-mcard" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

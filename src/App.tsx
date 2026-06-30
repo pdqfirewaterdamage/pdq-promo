@@ -7,7 +7,7 @@ import { FEATURES, AI_FEATURES } from './data';
 function Wordmark() {
   return (
     <span className="text-lg font-black tracking-tight text-white">
-      PDQ<span className="text-accent-500">·</span>CRM
+      Tailr
     </span>
   );
 }
@@ -17,8 +17,8 @@ function Nav({ onOpenCrm }: { onOpenCrm: () => void }) {
     <header className="no-print sticky top-0 z-40 border-b border-white/10 bg-navy-950/80 backdrop-blur">
       <div className="container-pdq flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-500 text-xs font-black text-white">
-            PDQ
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-500 text-sm font-black text-white">
+            T
           </span>
           <Wordmark />
         </a>
@@ -57,7 +57,7 @@ function Hero({ onOpenCrm }: { onOpenCrm: () => void }) {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/70">
-            PDQ Restoration CRM is the source of truth for jobs, customers, claims, and compliance —
+            Tailr CRM is the source of truth for jobs, customers, claims, and compliance —
             from water, fire, and mold mitigation to reconstruction and contents. A mobile app for the
             field, live dashboards for the office, and AI that does the heavy lifting.
           </p>
@@ -256,7 +256,7 @@ function CrmBanner({ onOpenCrm }: { onOpenCrm: () => void }) {
           <div>
             <p className="eyebrow text-emerald-300">The actual app — in your browser</p>
             <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">
-              Click through the real PDQ CRM
+              Click through the real Tailr CRM
             </h2>
             <p className="mt-4 max-w-xl text-white/70">
               The full office web app — all eight dashboards and every tab — plus the mobile
@@ -321,8 +321,8 @@ function Footer() {
     <footer className="no-print border-t border-white/10 py-10">
       <div className="container-pdq flex flex-col items-center justify-between gap-4 text-sm text-white/45 sm:flex-row">
         <Wordmark />
-        <p>PDQ Restoration CRM — promotional demo. Sample data only; no real customer data.</p>
-        <p>© {new Date().getFullYear()} PDQ Restoration</p>
+        <p>Tailr CRM — promotional demo. Sample data only; no real customer data.</p>
+        <p>© {new Date().getFullYear()} Tailr</p>
       </div>
     </footer>
   );

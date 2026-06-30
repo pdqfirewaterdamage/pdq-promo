@@ -80,7 +80,7 @@ function SlideCanvas({ slide, large }: { slide: Slide; large?: boolean }) {
       />
       {/* wordmark */}
       <div className="absolute right-6 top-5 z-10 text-xs font-black tracking-tight text-white/80">
-        PDQ<span style={{ color: ACCENT }}>·</span>CRM
+        Tailr
       </div>
       <SlideBody slide={slide} large={large} />
     </div>
@@ -136,7 +136,7 @@ export default function PitchDeck() {
     <section id="deck" className="container-pdq scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-2xl text-center">
         <p className="eyebrow">The pitch</p>
-        <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">The PDQ CRM story, in {total} slides</h2>
+        <h2 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl">The Tailr CRM story, in {total} slides</h2>
         <p className="mt-3 text-white/60">
           Navigate with the arrows or your keyboard. Export it as a PDF or a real PowerPoint.
         </p>

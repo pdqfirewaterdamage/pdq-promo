@@ -6,7 +6,7 @@ import { MobileCrm } from './MobileCrm';
 type Surface = 'web' | 'mobile';
 
 /**
- * Embedded, fully-clickable PDQ CRM demo. Reproduces the real app shell —
+ * Embedded, fully-clickable Tailr CRM demo. Reproduces the real app shell —
  * the navy-sidebar web office app (8 dashboards, every tab) and the Expo
  * mobile field/office app — running entirely on static, anonymized demo data.
  */
@@ -21,7 +21,7 @@ export default function CrmDemo({ onExit }: { onExit?: () => void }) {
             ← Back to site
           </button>
         )}
-        <strong style={{ fontSize: 14 }}>PDQ Restoration CRM — live demo</strong>
+        <strong style={{ fontSize: 14 }}>Tailr CRM — live demo</strong>
         <div className="crm-seg" style={{ marginLeft: 'auto' }}>
           <button className={surface === 'web' ? 'active' : ''} onClick={() => setSurface('web')}>🖥️ Web (Office)</button>
           <button className={surface === 'mobile' ? 'active' : ''} onClick={() => setSurface('mobile')}>📱 Mobile (Field)</button>
