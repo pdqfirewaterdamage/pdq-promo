@@ -1,7 +1,14 @@
-# Cloudflare Pages configuration for the PDQ CRM promo site.
-# This is a static SPA: Pages serves the built assets in ./dist.
+# Cloudflare Workers (static assets) configuration for the PDQ CRM promo site.
 #
-# Deploy via the dashboard (recommended) or `wrangler pages deploy dist`.
+# This is a static SPA. The Cloudflare project deploys with `npx wrangler deploy`,
+# which serves the built ./dist directory as a static-asset Worker (no server
+# code). `not_found_handling = "single-page-application"` makes any unknown path
+# fall back to index.html so deep links / refreshes work.
+#
+# Local preview of the production build: `npm run build && npm run preview`.
 name = "pdq-promo"
 compatibility_date = "2025-01-01"
-pages_build_output_dir = "dist"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
